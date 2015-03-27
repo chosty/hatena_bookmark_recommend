@@ -13,9 +13,8 @@ class Loader
 	def json_load
 		json_data = open("test.json")
 		json_data.each do |io|
-			json = JSON.parser.new(io)
-			hash = json.parse()
-			@tag_count_list[hash["tag"]] = hash["count"]
+			json = JSON.parser.new(io).parse()
+			@tag_count_list[json["tag"]] = json["count"]
 		end
 	end
 
