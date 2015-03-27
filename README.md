@@ -1,0 +1,4 @@
+# hatena_bookmark_recommend
+はてぶのデータを使ってページ推薦ごにょごにょ
+
+recommend.rbとtest.json以外は見なくてよろしい
