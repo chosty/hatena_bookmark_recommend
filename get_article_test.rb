@@ -1,15 +1,7 @@
-#データ読み込み、解析、推薦のクラスをそれぞれ作る
 require 'open-uri'
 require 'rss/1.0'
 
-class Loader
-end
-
-class Aanalyst
-end
-
 class Recommender
-
 	attr_accessor :article_list
 
 	def initialize()
@@ -28,5 +20,6 @@ class Recommender
 	end
 end
 
-class Main
-end
+rec = Recommender.new
+rec.get_article("ruby")
+puts rec.article_list()
