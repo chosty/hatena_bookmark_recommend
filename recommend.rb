@@ -2,9 +2,9 @@
 require 'open-uri'
 require 'rss/1.0'
 require 'json'
+require 'URI'
 
 class Loader
-
 	attr_accessor :tag_count_list
 
 	def initialize()
@@ -18,7 +18,6 @@ class Loader
 			@tag_count_list[json["tag"]] = json["count"]
 		end
 	end
-
 end
 
 class Aanalyst
@@ -28,14 +27,13 @@ class Aanalyst
 		@tag_count_list = hoge
 	end
 
+	#とりあえずランダムにタグ渡す
 	def tag()
-		#return @tag_count_list.keys.shuffle[0]
-		return "ruby"
+		return @tag_count_list.keys.shuffle[0]
 	end
 end
 
 class Recommender
-
 	attr_accessor :article_list
 
 	def initialize()
@@ -45,7 +43,8 @@ class Recommender
 	#指定されたタグの記事一覧を取得してくる
 	#日本語タグだとエラー吐いてくる
 	def get_article(tag)
-		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=100"
+		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=200"
+		url = URI.escape(url)
 		rss = open(url) do |file|
 			RSS::Parser.parse(file.read)
 		end
@@ -59,7 +58,6 @@ class Recommender
 		title = @article_list.keys.shuffle[0]
 		return "#{title}, #{@article_list[title]}"
 	end
-
 end
 
 #オブジェクト指向よくわからん
@@ -69,7 +67,7 @@ class Main
 		loader.json_load()
 		analyst = Aanalyst.new(loader.tag_count_list())
 		analyst.tag_count_list
-		tag = analyst.tag()
+		puts tag = analyst.tag()
 		recommender = Recommender.new()
 		recommender.get_article(tag)
 		puts recommender.recommend_article()
