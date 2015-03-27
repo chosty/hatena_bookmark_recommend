@@ -18,8 +18,15 @@ class Recommender
 			@article_list[item.title] = item.link
 		end
 	end
+
+	def recommend_article()
+		title = @article_list.keys.shuffle[0]
+		return "#{title}, #{@article_list[title]}"
+	end
+
 end
 
 rec = Recommender.new
 rec.get_article("ruby")
-puts rec.article_list()
+rec.article_list()
+puts rec.recommend_article()

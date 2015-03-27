@@ -11,7 +11,7 @@ class Loader
 		@tag_count_list = Hash.new
 	end
 
-	def json_load
+	def json_load()
 		json_data = open("test.json")
 		json_data.each do |io|
 			json = JSON.parser.new(io).parse()
@@ -22,6 +22,16 @@ class Loader
 end
 
 class Aanalyst
+	attr_accessor :tag_count_list
+
+	def initialize(hoge)
+		@tag_count_list = hoge
+	end
+
+	def tag()
+		#return @tag_count_list.keys.shuffle[0]
+		return "ruby"
+	end
 end
 
 class Recommender
@@ -33,6 +43,7 @@ class Recommender
 	end
 
 	#指定されたタグの記事一覧を取得してくる
+	#日本語タグだとエラー吐いてくる
 	def get_article(tag)
 		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=100"
 		rss = open(url) do |file|
@@ -42,7 +53,32 @@ class Recommender
 			@article_list[item.title] = item.link
 		end
 	end
+
+	#とりあえず一覧からランダムに記事を出す
+	def recommend_article()
+		title = @article_list.keys.shuffle[0]
+		return "#{title}, #{@article_list[title]}"
+	end
+
 end
 
+#オブジェクト指向よくわからん
 class Main
+	def flow
+		loader = Loader.new
+		loader.json_load()
+		analyst = Aanalyst.new(loader.tag_count_list())
+		analyst.tag_count_list
+		tag = analyst.tag()
+		recommender = Recommender.new()
+		recommender.get_article(tag)
+		puts recommender.recommend_article()
+	end
 end
+
+main = Main.new
+main.flow
+
+
+
+
