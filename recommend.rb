@@ -1,8 +1,25 @@
 #データ読み込み、解析、推薦のクラスをそれぞれ作る
 require 'open-uri'
 require 'rss/1.0'
+require 'json'
 
 class Loader
+
+	attr_accessor :tag_count_list
+
+	def initialize()
+		@tag_count_list = Hash.new
+	end
+
+	def json_load
+		json_data = open("test.json")
+		json_data.each do |io|
+			json = JSON.parser.new(io)
+			hash = json.parse()
+			@tag_count_list[hash["tag"]] = hash["count"]
+		end
+	end
+
 end
 
 class Aanalyst
