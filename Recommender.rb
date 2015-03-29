@@ -11,6 +11,7 @@ class Recommender
 
 	#指定されたタグの記事一覧を取得してくる
 	#日本語タグだとエラー吐いてくる
+	#encodeして解決した(はず)
 	def get_article(tag)
 		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=100"
 		url = URI.encode(url)
