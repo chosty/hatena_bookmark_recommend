@@ -17,13 +17,13 @@ class Main
 		@analyst.tag_count_list = @loader.tag_count_list()
 		@tag = @analyst.tag()
 		@recommender.get_article(@tag)
-		puts @recommender.recommend_article()
+		url = @recommender.recommend_article()
+		`open -a "/Applications/Google Chrome.app" #{url}`
 	end
 end
 
 main = Main.new
 main.flow
-
 
 
 

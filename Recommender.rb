@@ -13,7 +13,10 @@ class Recommender
 	#日本語タグだとエラー吐いてくる
 	#encodeして解決した(はず)
 	def get_article(tag)
-		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=100"
+		if tag.kind_of?(Array)
+			tag = tag.join("+")
+		end
+		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=10"
 		url = URI.encode(url)
 		rss = open(url) do |file|
 			RSS::Parser.parse(file.read)
@@ -25,7 +28,7 @@ class Recommender
 
 	#とりあえず一覧からランダムに記事を出す
 	def recommend_article()
-		title = @article_list.keys.shuffle[0]
-		return "#{title}, #{@article_list[title]}"
+		title = @article_list.keys.sample()
+		return "#{@article_list[title]}"
 	end
 end

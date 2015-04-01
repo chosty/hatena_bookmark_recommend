@@ -80,11 +80,12 @@
 {"count":1,"tag":"keynote"}
 {"count":1,"tag":"kotoriko"}
 {"count":4,"tag":"latex"}
+{"count":1,"tag":"League of Legends"}
 {"count":1,"tag":"life"}
 {"count":1,"tag":"lifehack"}
 {"count":1,"tag":"Linux"}
 {"count":1,"tag":"lisp"}
-{"count":1,"tag":"LoL"}
+{"count":2,"tag":"LoL"}
 {"count":21,"tag":"mac"}
 {"count":1,"tag":"Mac OS X"}
 {"count":2,"tag":"MacBook Air"}
@@ -92,6 +93,7 @@
 {"count":1,"tag":"macruby"}
 {"count":1,"tag":"matz"}
 {"count":1,"tag":"Microsoft"}
+{"count":1,"tag":"MOBA"}
 {"count":1,"tag":"MS"}
 {"count":1,"tag":"mvc"}
 {"count":2,"tag":"MySQL"}
@@ -127,7 +129,8 @@
 {"count":2,"tag":"research"}
 {"count":1,"tag":"Ricty"}
 {"count":1,"tag":"RMagick"}
-{"count":61,"tag":"ruby"}
+{"count":1,"tag":"rss"}
+{"count":63,"tag":"ruby"}
 {"count":8,"tag":"ruby on rails"}
 {"count":1,"tag":"ruby-build"}
 {"count":2,"tag":"RubyMine"}
@@ -179,7 +182,7 @@
 {"count":1,"tag":"zsh"}
 {"count":5,"tag":"あとでみる"}
 {"count":1,"tag":"あとで行く"}
-{"count":18,"tag":"あとで読む"}
+{"count":19,"tag":"あとで読む"}
 {"count":1,"tag":"いい話"}
 {"count":1,"tag":"うどん"}
 {"count":1,"tag":"おもしろ"}
@@ -205,7 +208,7 @@
 {"count":2,"tag":"イラスト"}
 {"count":6,"tag":"エディタ"}
 {"count":6,"tag":"エロ"}
-{"count":19,"tag":"エンジニア"}
+{"count":21,"tag":"エンジニア"}
 {"count":1,"tag":"エヴァメール"}
 {"count":1,"tag":"エヴァンゲリオン"}
 {"count":2,"tag":"オフィス"}
@@ -221,7 +224,7 @@
 {"count":1,"tag":"コミケ"}
 {"count":3,"tag":"コミュニケーション"}
 {"count":3,"tag":"コンテンツ"}
-{"count":2,"tag":"コーディング"}
+{"count":3,"tag":"コーディング"}
 {"count":1,"tag":"コーディング規約"}
 {"count":1,"tag":"コーラ"}
 {"count":1,"tag":"サブカルチャー"}
@@ -237,18 +240,19 @@
 {"count":4,"tag":"ソフトウェア開発"}
 {"count":4,"tag":"チュートリアル"}
 {"count":1,"tag":"チートシート"}
-{"count":9,"tag":"ツール"}
+{"count":10,"tag":"ツール"}
 {"count":1,"tag":"テキストマイニング"}
 {"count":1,"tag":"テキスト・マイニング"}
 {"count":1,"tag":"テトリス"}
 {"count":3,"tag":"テンプレート"}
 {"count":16,"tag":"デザイン"}
 {"count":2,"tag":"デザインパターン"}
-{"count":2,"tag":"データ"}
+{"count":3,"tag":"データ"}
+{"count":2,"tag":"データサイエンス"}
 {"count":1,"tag":"データサイエンティス"}
 {"count":2,"tag":"データベース"}
-{"count":5,"tag":"データマイニング"}
-{"count":2,"tag":"データ分析"}
+{"count":6,"tag":"データマイニング"}
+{"count":3,"tag":"データ分析"}
 {"count":2,"tag":"ニコニコ動画"}
 {"count":1,"tag":"ニコニコ技術部"}
 {"count":15,"tag":"ネタ"}
@@ -269,7 +273,7 @@
 {"count":4,"tag":"プレゼン"}
 {"count":6,"tag":"プレゼンテーション"}
 {"count":11,"tag":"プログラマ"}
-{"count":71,"tag":"プログラミング"}
+{"count":72,"tag":"プログラミング"}
 {"count":4,"tag":"プログラミング言語"}
 {"count":1,"tag":"プロモーション"}
 {"count":1,"tag":"プロ野球"}
@@ -287,7 +291,7 @@
 {"count":1,"tag":"ユーザビリティ"}
 {"count":1,"tag":"ユーモア"}
 {"count":5,"tag":"ライフハック"}
-{"count":5,"tag":"ライブラリ"}
+{"count":6,"tag":"ライブラリ"}
 {"count":1,"tag":"ランキング"}
 {"count":2,"tag":"ラーメン"}
 {"count":1,"tag":"リファレンス"}
@@ -302,8 +306,8 @@
 {"count":1,"tag":"京都"}
 {"count":2,"tag":"人工知能"}
 {"count":7,"tag":"人生"}
-{"count":15,"tag":"仕事"}
-{"count":4,"tag":"会社"}
+{"count":16,"tag":"仕事"}
+{"count":5,"tag":"会社"}
 {"count":4,"tag":"便利"}
 {"count":12,"tag":"入門"}
 {"count":1,"tag":"公務員"}
@@ -351,7 +355,7 @@
 {"count":1,"tag":"感情分析"}
 {"count":1,"tag":"戦争"}
 {"count":1,"tag":"手品"}
-{"count":6,"tag":"技術"}
+{"count":7,"tag":"技術"}
 {"count":2,"tag":"技術書"}
 {"count":3,"tag":"採用"}
 {"count":1,"tag":"描き方"}
@@ -361,7 +365,7 @@
 {"count":5,"tag":"文章"}
 {"count":1,"tag":"文章術"}
 {"count":1,"tag":"料理"}
-{"count":4,"tag":"日本"}
+{"count":5,"tag":"日本"}
 {"count":1,"tag":"日本語"}
 {"count":2,"tag":"映画"}
 {"count":5,"tag":"書籍"}
@@ -370,7 +374,7 @@
 {"count":2,"tag":"東京"}
 {"count":1,"tag":"植物"}
 {"count":3,"tag":"構築"}
-{"count":7,"tag":"機械学習"}
+{"count":8,"tag":"機械学習"}
 {"count":1,"tag":"歴史"}
 {"count":1,"tag":"毒"}
 {"count":1,"tag":"水着"}
@@ -398,9 +402,10 @@
 {"count":3,"tag":"社会"}
 {"count":1,"tag":"神戸大"}
 {"count":2,"tag":"科学"}
-{"count":1,"tag":"米国"}
+{"count":2,"tag":"米国"}
 {"count":1,"tag":"素材"}
 {"count":1,"tag":"経営"}
+{"count":1,"tag":"給料"}
 {"count":3,"tag":"統計"}
 {"count":1,"tag":"美人"}
 {"count":1,"tag":"美女"}
@@ -428,7 +433,7 @@
 {"count":1,"tag":"退職"}
 {"count":1,"tag":"遺伝的アルゴリズム"}
 {"count":2,"tag":"配色"}
-{"count":24,"tag":"開発"}
+{"count":25,"tag":"開発"}
 {"count":6,"tag":"開発環境"}
 {"count":2,"tag":"関数型プログラミング"}
 {"count":1,"tag":"関数型言語"}

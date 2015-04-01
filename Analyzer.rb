@@ -1,8 +1,8 @@
-class Aanalyst
+class Analyzer
 	attr_accessor :tag_count_list
 
 	def initialize()
-		@tag_count_list = Hash.new
+		@tag_frequency = Hash.new
 	end
 
 	#タグ付け回数上位10件の中からランダムでタグを返す
