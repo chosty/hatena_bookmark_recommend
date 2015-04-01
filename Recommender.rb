@@ -1,34 +1,36 @@
 require 'open-uri'
 require 'rss/1.0'
 require 'URI'
+require "./Analyzer.rb"
 
 class Recommender
-	attr_accessor :article_list
+	attr_accessor :article_list, :query
 
-	def initialize()
-		@article_list = Hash.new
+	def initialize(cotags)
+		@query = create_query(cotags)
+	end
+
+	#queryをつくる
+	def create_query(cotags)
+		return cotags.join("+")
 	end
 
 	#指定されたタグの記事一覧を取得してくる
-	#日本語タグだとエラー吐いてくる
-	#encodeして解決した(はず)
-	def get_article(tag)
-		if tag.kind_of?(Array)
-			tag = tag.join("+")
-		end
-		url = "http://b.hatena.ne.jp/search/tag?q=#{tag}&mode=rss&users=10"
+	def get_article_list
+		ret = {}
+		url = "http://b.hatena.ne.jp/search/tag?q=#{@query}&mode=rss&users=10"
 		url = URI.encode(url)
 		rss = open(url) do |file|
 			RSS::Parser.parse(file.read)
 		end
 		rss.items.each do |item|
-			@article_list[item.title] = item.link
+			ret[item.title] = item.link
 		end
+		ret
 	end
 
-	#とりあえず一覧からランダムに記事を出す
-	def recommend_article()
-		title = @article_list.keys.sample()
-		return "#{@article_list[title]}"
+	#とりあえず一覧からランダムに記事のULRを返す
+	def get_url
+		get_article_list.values.sample.to_s
 	end
 end

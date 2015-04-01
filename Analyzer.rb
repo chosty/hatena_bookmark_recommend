@@ -1,31 +1,29 @@
 require "fpgrowth"
 require "pp"
+require "./TestLoader.rb"
 
 class Analyzer
-	attr_accessor :tag_transactions
-
-	def initialize()
-		@tag_transactions = Array.new
+	def initialize(loader)
+		@loader = loader
+		@tagging_history = @loader.load()
+		@cooccurring_tagslist = assosiation_rule_mining(@tagging_history)
 	end
 
-	#タグ付け回数上位10件の中からランダムでタグを返す
-	#def tag()
-		#tag_list = @tag_count_list.sort {|(k1, v1), (k2, v2)| v2 <=> v1 }
-		#tag_list = Hash[tag_list]
-		#tag = tag_list.keys.take(10).sample()
-		#return tag
-	#end
+	#共起度？の高いTagの組み合わせからランダムに一つ取得
+	def sample
+		return @cooccurring_tagslist.sample()
+	end
 
-	def fp_growth()
-		tags = Array.new()
+	def assosiation_rule_mining(tag_transactions)
 		fp_tree = FpGrowth::FpTree.build(tag_transactions)
 		patterns = FpGrowth::Miner.td_fp_growth(fp_tree)
+		tags = []
 		patterns.each do |pattern|
 			#出現頻度が1%以上かつ二個の組み合わせ
-			if pattern.content.length == 2 && pattern.support > @tag_transactions.length * 0.01
+			if pattern.content.length == 2 && pattern.support > tag_transactions.length * 0.01
 				tags.push(pattern.content)
 			end
 		end
-		return tags.sample()
+		tags
 	end
 end
