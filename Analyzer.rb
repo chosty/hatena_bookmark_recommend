@@ -1,6 +1,5 @@
 require "fpgrowth"
 require "pp"
-require "./TestLoader.rb"
 
 class Analyzer
 	def initialize(loader)

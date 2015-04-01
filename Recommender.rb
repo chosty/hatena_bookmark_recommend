@@ -1,7 +1,6 @@
 require 'open-uri'
 require 'rss/1.0'
 require 'URI'
-require "./Analyzer.rb"
 
 class Recommender
 	attr_accessor :article_list, :query
